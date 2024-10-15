@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mora's Page - Enhanced Responsive Layout</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        header {
+            background-image: linear-gradient(to right, #4CAF50, #45a049);
+            color: #fff;
+            padding: 2em 1.5em;
+            text-align: center;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header .logo {
+            margin-bottom: 1em;
+        }
+
+        .logo img {
+            max-width: 80px;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 2em;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            background-color: #222;
+            padding: 1em;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2em;
+            padding: 0;
+            margin: 0;
+            justify-content: center;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5em 1em;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+
+        #main {
+            padding: 2em;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em;
+        }
+
+        .main-content {
+            flex: 2;
+            background-color: #fff;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .secondary-content {
+            flex: 1;
+            background-color: #fff;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5em;
+        }
+
+        .block-element {
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 1.5em;
+            flex: 1 1 calc(33.333% - 2em);
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .block-element:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .block-element img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1em;
+        }
+
+        .inline-elements {
+            display: flex;
+            gap: 1em;
+            padding: 1em 0;
+            justify-content: center;
+        }
+
+        .inline-element {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 0.5em 1.5em;
+            border-radius: 20px;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .inline-element:hover {
+            background-color: #45a049;
+            transform: translateY(-5px);
+        }
+
+        footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 1.5em;
+            margin-top: 2em;
+            font-size: 0.9em;
+            border-top: 5px solid #4CAF50;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+        }
+
+        footer ul li a {
+            text-decoration: none;
+        }
+
+        footer ul li a img {
+            max-width: 30px;
+            transition: transform 0.3s;
+        }
+
+        footer ul li a:hover img {
+            transform: scale(1.2);
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 1024px) {
+            .block-element {
+                flex: 1 1 calc(50% - 2em);
+            }
+
+            #main {
+                flex-direction: column;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            header {
+                text-align: center;
+                padding: 1.5em;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1em;
+                align-items: stretch;
+                width: 100%;
+            }
+
+            nav ul li {
+                width: 100%;
+            }
+
+            nav ul li a {
+                width: 100%;
+                text-align: center;
+                padding: 1em;
+            }
+
+            #main {
+                flex-direction: column;
+            }
+
+            .block-element {
+                flex: 1 1 calc(100% - 2em);
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            header {
+                text-align: center;
+                padding: 1em;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            header .logo {
+                margin-bottom: 0.5em;
+            }
+
+            header .logo img {
+                max-width: 60px;
+            }
+
+            nav {
+                padding: 0.5em;
+                box-shadow: none;
+            }
+
+            nav ul {
+                flex-direction: row;
+                flex-wrap: wrap;
+                padding: 0;
+                gap: 0.5em;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            nav ul li {
+                flex: 1;
+                max-width: calc(33.333% - 1em);
+                text-align: center;
+            }
+
+            nav ul li a {
+                padding: 0.5em;
+                font-size: 0.9em;
+            }
+
+            .main-content, .secondary-content {
+                padding: 1em;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h2, h3, h4 {
+                font-size: 1.4em;
+            }
+
+            .block-element {
+                flex: 1 1 100%;
+                margin-bottom: 1em;
+            }
+
+            #main {
+                flex-direction: column;
+                gap: 1em;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            footer {
+                padding: 1em;
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div id="main">
+        <!-- Primary Content -->
+        <div class="main-content">
+            <!-- Header Section -->
+            <header>
+                <div class="logo">
+                    <img src="img/IMG_20210215_215655_743.jpg" alt="logo" />
+                </div>
+                <div>
+                    <h1>Welcome to My Profile!</h1>
+                </div>
+            </header>
+
+            <!-- Hero Section -->
+            <section id="hero">
+                <h2>About Me</h2>
+                <p>
+                    Hi there! My name is Moratua Putra Pardede, but you can call me Mora.
+                    I'm currently a seventh-semester student in the Computer Science program
+                    at the Faculty of Industrial Technology, Institut Teknologi Sumatera.
+                </p>
+                <blockquote>
+                    "Coding is my passion, as it challenges me to solve problems and create
+                    innovative projects."
+                </blockquote>
+            </section>
+
+            <!-- Hobbies Section -->
+            <section id="hobbies">
+                <h3>My Hobbies</h3>
+
+                <div class="container">
+                    <article class="block-element">
+                        <h4>Anime</h4>
+                        <img src="img/anime.jpg" alt="Hobby 1" />
+                        <p>
+                            Watching anime is my way of exploring deep stories and characters
+                            while enjoying the unique visual styles and culture of Japan.
+                        </p>
+                    </article>
+
+                    <article class="block-element">
+                        <h4>Coding</h4>
+                        <img src="img/coding.jpg" alt="Hobby 2" />
+                        <p>
+                            Coding is a hobby that allows me to create and solve problems.
+                            Learning new programming languages enhances my skills.
+                        </p>
+                    </article>
+
+                    <article class="block-element">
+                        <h4>Music</h4>
+                        <img src="img/music.jpg" alt="Hobby 3" />
+                        <p>
+                            Music serves as my escape and source of inspiration. I love listening
+                            to various genres, from K-pop to indie.
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Inline Elements Section -->
+            <section id="inline-elements">
+                <h3>Favorite Activities</h3>
+                <div class="inline-elements">
+                    <div class="inline-element">Jogging</div>
+                    <div class="inline-element">Swimming</div>
+                    <div class="inline-element">Reading</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Secondary Content -->
+        <aside class="secondary-content">
+            <h3>Side Notes</h3>
+            <p>In addition to my hobbies and activities, I also enjoy participating in tech meetups and online coding challenges. I believe these activities not only help me stay up to date with the latest trends in technology but also allow me to network with like-minded individuals. Moreover, I am a member of the campus coding club, where we collaborate on projects and host workshops to share our knowledge with fellow students.</p>
+            <p>Feel free to reach out if you are interested in collaborating on any exciting projects or simply want to talk about technology, anime, or music!</p>
+            <h4>My Skills</h4>
+            <ul>
+                <li>Programming Languages: Python, JavaScript, Java</li>
+                <li>Web Development: HTML, CSS, JavaScript, React</li>
+                <li>Database Management: MySQL, MongoDB</li>
+                <li>Version Control: Git, GitHub</li>
+                <li>Problem Solving & Algorithms</li>
+            </ul>
+        </aside>
+    </div>
+
+    <!-- Footer Section -->
+    <footer id="contact">
+        <h4>Connect with Me!</h4>
+        <ul>
+            <li>
+                <a href="https://www.instagram.com/yaelahmorrr/">
+                    <img src="img/instagram.svg" alt="Instagram" />
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/kazuhikoakiraa">
+                    <img src="img/github.svg" alt="GitHub" />
+                </a>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>
